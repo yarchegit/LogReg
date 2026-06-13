@@ -160,6 +160,29 @@
 - ROC‑кривая и ROC‑AUC (`roc_auc_rf`).
 - Анализ важностей признаков (топ‑20 по `feature_importances_`).
 
+### 3. CatBoost
+
+Подготовка признаков:
+
+- Категориальные признаки:
+  - `visit_month`,
+  - `visit_dayofweek`,
+  - `device_category`,
+  - `source`,
+  - `city`.
+- Для этих колонок используется нативная обработка категорий в CatBoost (переводим в строковый тип и передаём список `cat_features` при обучении).
+
+Модель:
+
+- `CatBoostClassifier(iterations=500, learning_rate=0.05, depth=6, loss_function='Logloss', eval_metric='AUC', class_weights=[1, 3], random_seed=42, verbose=100)`.
+
+Оценка:
+
+- ROC‑кривая и ROC‑AUC (`roc_auc_cb`), на тесте ≈ 0.687 и чуть лучше случайного леса.
+- Анализ важностей признаков через `get_feature_importance` (топ‑20 признаков по важности).
+- Финальная модель сохраняется в `models/model.pkl` и используется скриптом `src/infer.py` для инференса.
+
+
 ---
 
 ## Скрипт инференса
