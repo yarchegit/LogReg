@@ -1,6 +1,0 @@
-visit_number,visit_month,visit_dayofweek,visit_hour,is_paid,is_social,city,source,device_category,proba
-1,1,0,10,0,0,Moscow,yandex,desktop,0.49286395288281226
-3,3,2,14,1,0,Moscow,google,mobile,0.5291933601962433
-5,5,4,20,0,1,SPb,direct,mobile,0.42795415769201106
-2,7,5,23,1,1,Kazan,social,tablet,0.23857402198483396
-10,12,6,3,1,0,Novosibirsk,email,desktop,0.2800741973482747
